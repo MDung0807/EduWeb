@@ -3,16 +3,16 @@ import configs from '../configs'
 import {ClientLayouts, AdminLayouts} from '../layouts';
 
 const publicRoutes = [
-    { path: configs.routers.home, component: Home, layout: ClientLayouts, private: false, roles: []}
+    { path: configs.routes.home, component: Home, layout: ClientLayouts, private: false, roles: []}
 ];
 
 const privateRoutes= [
     {}
 ]
 
-const routers = {
+const routes = [
     ...publicRoutes,
     ...privateRoutes
-}
+]
 
-export default routers;
+export default routes;

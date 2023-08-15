@@ -1,10 +1,9 @@
-import Header from "./header";
-import Footer from "./footer";
+import Header from "./Header";
+import Footer from "./Footer";
 
-const ClientLayouts = ({children}) =>{
+const ClientLayouts = () =>{
     <div>
         <Header/>
-        {children}
         <Footer/>
     </div>   
 }

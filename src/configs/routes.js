@@ -8,9 +8,9 @@ const client = {
 const admin = {
     homeAdmin: '/admin',
 }
-const routers = {
+const routes = {
     ...client,
     ...admin
 }
 
-export default routers;
+export default routes;

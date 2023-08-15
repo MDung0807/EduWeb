@@ -1,6 +1,6 @@
-import routers from './routers'
+import routes from './routes'
 const configs = {
-    routers
+    routes
 }
 
 export default configs
