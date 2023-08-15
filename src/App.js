@@ -1,15 +1,25 @@
 import './App.css';
-import Home from './pages/Home';
-import Header from './components/header/Header';
-import Footer from './components/footer/index.js';
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import routers from './routes';
+import { Home } from './pages/client';
 function App() {
   return (
-    <div>
-      <Header/>
-    <Home/>
-    <Footer/>
-    </div>
+    <Router>
+      <Routes>
+        {routers.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            exact={true}
+            render={props => (
+              <route.layout>
+                <route.component {...props} />
+              </route.layout>
+            )}
+          />
+        ))}
+      </Routes>
+    </Router>
   );
 }
 
