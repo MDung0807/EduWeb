@@ -7,7 +7,7 @@ const publicRoutes = [
 ];
 
 const privateRoutes= [
-    {}
+    {path: configs.routes.homeAdmin, component: Home, layout: AdminLayouts, private: true, roles: ['admin']},
 ]
 
 const routes = [

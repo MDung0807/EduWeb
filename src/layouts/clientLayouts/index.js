@@ -1,11 +1,14 @@
 import Header from "./Header";
 import Footer from "./Footer";
 
-const ClientLayouts = () =>{
-    <div>
-        <Header/>
-        <Footer/>
-    </div>   
+const ClientLayouts = ({children}) =>{
+    return (
+        <div>
+            <Header/>
+            {children}
+            <Footer/>
+        </div>   
+    )
 }
 
 export default ClientLayouts;
