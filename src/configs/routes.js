@@ -3,6 +3,8 @@ const client = {
     signin: '/signin',
     signup: '/signup',
     passReset: '/passreset',
+    subjects: '/subjects',
+    topics: '/topics',
 }
 
 const admin = {

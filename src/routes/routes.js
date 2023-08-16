@@ -1,9 +1,10 @@
 import {
-    ForgotPass,
     Home,
     PasswordReset,
     SignIn,
-    SignUp
+    SignUp,
+    Subjects,
+    Topics,
 } from '../pages/client'
 import configs from '../configs'
 import {ClientLayouts, AdminLayouts} from '../layouts';
@@ -13,6 +14,8 @@ const publicRoutes = [
     { path: configs.routes.signin, component: SignIn, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.signup, component: SignUp, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.passReset, component: PasswordReset, layout: ClientLayouts, private: false, roles: []},
+    { path: configs.routes.subjects, component: Subjects, layout: ClientLayouts, private: false, roles: []},
+    { path: configs.routes.topics, component: Topics, layout: ClientLayouts, private: false, roles: []},
 
 ];
 
