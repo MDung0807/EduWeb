@@ -5,7 +5,7 @@ const ClientLayouts = ({children}) =>{
     return (
         <div>
             <Header/>
-            <div className="my-5">{children}</div>
+            <div className="">{children}</div>
             <Footer/>
         </div>   
     )

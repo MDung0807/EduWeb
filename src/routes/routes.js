@@ -1,6 +1,7 @@
 import {
     ForgotPass,
     Home,
+    PasswordReset,
     SignIn,
     SignUp
 } from '../pages/client'
@@ -11,7 +12,7 @@ const publicRoutes = [
     { path: configs.routes.home, component: Home, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.signin, component: SignIn, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.signup, component: SignUp, layout: ClientLayouts, private: false, roles: []},
-    { path: configs.routes.forgotPass, component: ForgotPass, layout: ClientLayouts, private: false, roles: []},
+    { path: configs.routes.passReset, component: PasswordReset, layout: ClientLayouts, private: false, roles: []},
 
 ];
 

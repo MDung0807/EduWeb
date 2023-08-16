@@ -2,7 +2,7 @@ const client = {
     home: '/',
     signin: '/signin',
     signup: '/signup',
-    forgotPass: '/forgotpass',
+    passReset: '/passreset',
 }
 
 const admin = {
