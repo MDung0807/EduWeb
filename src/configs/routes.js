@@ -1,8 +1,8 @@
 const client = {
     home: '/',
-    login: '/login',
-    register: '/register',
-    subjects: '/subjects',
+    signin: '/signin',
+    signup: '/signup',
+    forgotPass: '/forgotpass',
 }
 
 const admin = {

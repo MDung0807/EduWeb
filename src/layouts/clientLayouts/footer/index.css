@@ -1,15 +1,15 @@
 footer {
-    height: 200px;
+    height: 150px;
 }
 
 
 a{
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 a:hover {
-    color: white; 
+    color: black; 
   }
   
 
