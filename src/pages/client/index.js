@@ -5,3 +5,4 @@ export {default as SignUp} from "./SignUp";
 export {default as PasswordReset} from "./PasswordReset"; 
 export {default as Subjects} from "./Subjects";
 export {default as Topics} from "./Topics";
+export {default as WishList} from "./WishList";

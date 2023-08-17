@@ -16,6 +16,7 @@ const publicRoutes = [
     { path: configs.routes.passReset, component: PasswordReset, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.subjects, component: Subjects, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.topics, component: Topics, layout: ClientLayouts, private: false, roles: []},
+    { path: configs.routes.wishlist, component: Topics, layout: ClientLayouts, private: false, roles: []},
 
 ];
 

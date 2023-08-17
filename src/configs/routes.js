@@ -5,6 +5,7 @@ const client = {
     passReset: '/passreset',
     subjects: '/subjects',
     topics: '/topics',
+    wishlist: '/wishlist',
 }
 
 const admin = {
