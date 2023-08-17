@@ -6,6 +6,9 @@ const client = {
     subjects: '/subjects',
     topics: '/topics',
     wishlist: '/wishlist',
+    quizzes: '/quizzes',
+    profile: '/profile',
+    history: '/history',
 }
 
 const admin = {

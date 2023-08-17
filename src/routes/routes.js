@@ -1,6 +1,9 @@
 import {
+    HisQuizzes,
     Home,
     PasswordReset,
+    Profile,
+    Quizzes,
     SignIn,
     SignUp,
     Subjects,
@@ -17,6 +20,9 @@ const publicRoutes = [
     { path: configs.routes.subjects, component: Subjects, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.topics, component: Topics, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.wishlist, component: Topics, layout: ClientLayouts, private: false, roles: []},
+    { path: configs.routes.quizzes, component: Quizzes, layout: ClientLayouts, private: false, roles: []},
+    { path: configs.routes.history, component: HisQuizzes, layout: ClientLayouts, private: false, roles: []},
+    { path: configs.routes.profile, component: Profile, layout: ClientLayouts, private: false, roles: []},
 
 ];
 

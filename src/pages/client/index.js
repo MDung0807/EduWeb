@@ -6,3 +6,6 @@ export {default as PasswordReset} from "./PasswordReset";
 export {default as Subjects} from "./Subjects";
 export {default as Topics} from "./Topics";
 export {default as WishList} from "./WishList";
+export {default as Quizzes} from "./Quizzes";
+export {default as HisQuizzes} from "./HisQuizzes";
+export {default as Profile} from "./Profile";
