@@ -9,6 +9,7 @@ const client = {
     quizzes: '/quizzes',
     profile: '/profile',
     history: '/history',
+    transcript: '/transcript',
 }
 
 const admin = {

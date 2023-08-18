@@ -4,6 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import image from "../../../assets/client/home.svg"
 import { Link } from 'react-router-dom'
 import configs from '../../../configs'
+import avatar from "../../../assets/client/avatar.png"
 
 const navigation = [
   { name: 'Home', href: '#', current: true , address: configs.routes.home},
@@ -15,6 +16,7 @@ const navigation = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
+
 
 export default function Header() {
   return (
@@ -74,10 +76,10 @@ export default function Header() {
                   <div>
                     <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-1.5" />
-                      <span className="sr-only">Open user menu</span>
+                      <span className="sr-only" >Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        src={localStorage.getItem("avatar") ? localStorage.getItem("avatar") : avatar }
                         alt=""
                       />
                     </Menu.Button>
@@ -93,14 +95,7 @@ export default function Header() {
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Your Profile
-                          </a>
-                        )}
+                      <Link className='hover:bg-gray-100 block px-4 py-2 text-sm text-gray-700' to={configs.routes.profile}>Profile</Link>
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (

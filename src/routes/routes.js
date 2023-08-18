@@ -7,6 +7,7 @@ import {
     SignIn,
     SignUp,
     Subjects,
+    Transcript,
     Topics,
 } from '../pages/client'
 import configs from '../configs'
@@ -23,6 +24,7 @@ const publicRoutes = [
     { path: configs.routes.quizzes, component: Quizzes, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.history, component: HisQuizzes, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.profile, component: Profile, layout: ClientLayouts, private: false, roles: []},
+    { path: configs.routes.transcript, component: Transcript, layout: ClientLayouts, private: false, roles: []},
 
 ];
 
