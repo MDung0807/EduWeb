@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 export default function ItemTranscript ({item}){
     return (
         <Container>
-        <Row>
+        <Row className='pt-2'>
           <Col>{item.hisId}</Col>
           <Col xs={5}>{item.firstName + item.lastName}</Col>
           <Col>{item.testName}</Col>
