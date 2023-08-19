@@ -2,8 +2,10 @@ import { Avatar } from "@mui/material"
 import { Image } from "react-bootstrap"
 import Grid from '@mui/material/Unstable_Grid2';
 import ListGroup from 'react-bootstrap/ListGroup';
+import Transcript from "../Transcript";
+import configs from "../../../configs";
+import { Link } from "react-router-dom";
 import './main.css'
-import ItemTranscript from "../../../components/ItemTranscript";
 const user = {
     userId: 1,
     avatar: "https://res.cloudinary.com/dx7nsygei/image/upload/v1686538256/image_user_student5.jpg",
@@ -27,6 +29,7 @@ const hisTest = [
     {hisId: 8, firstName: 'Do', lastName: 'Dung', testId: 8, testName: 'test 8', score: 8, timeInTest: 60 , time: "12/12/2020"},
 
 ]
+const action = 'how'
 export default function Profile (){
     return (
         <div className="profile">
@@ -61,16 +64,9 @@ export default function Profile (){
                     </Grid>
                 </Grid>
                 </div>
-                <div className="Transcript has-background-grey-light py-5">
-                    <div className="transcript-title title text-center">
-                        <h1>Transcript</h1>
-                    </div>
-                    <div className="pt-5">
-                        {hisTest.map((item, index) => (
-                            <ItemTranscript key={index} item={item} />)
-                        )}
-                    </div>
-               
+                <div className="Transcript">
+                    <Transcript hisTest={hisTest} action={action}/>
+                    <Link to={configs.routes.transcript}>See more</Link>
                 </div>
             </div>
         </div>
