@@ -17,6 +17,7 @@ const user = {
     gender: "Female",
     status: 1,
 }
+localStorage.clear()
 
 const hisTest = [
     {hisId: 1, firstName: 'Do', lastName: 'Dung', testId: 1, testName: 'test 1', score: 8, timeInTest: 60 , time: "12/12/2020"},
@@ -41,7 +42,7 @@ export default function Profile (){
                 <Grid container spacing={2}>
                     <Grid xs={2.5}>
                         <div className="avatar">
-                            <img className="" src="https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/366709017_962995118145135_2999400435322536742_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=MT4GDF4arXEAX_D3vKH&_nc_oc=AQk8roSgjGrzHQ53k2AYD3h7mfdyKhfst8JhpIm71euRukEv5SPw07poEQQRVIQ5xb4&_nc_ht=scontent.fsgn2-9.fna&oh=00_AfBr5Mo0Z6Gx80dzU5D7UOXQ90ReqQP1SFMpXOVjv3viBw&oe=64E2A8BC" alt="MD" />
+                            <img className="" src="https://res.cloudinary.com/dx7nsygei/image/upload/v1683611484/image_user_student10.jpg" alt="MD" />
                         </div>
                     </Grid>
                     <Grid xs={8}>
