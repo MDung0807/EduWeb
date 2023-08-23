@@ -10,6 +10,7 @@ const client = {
     profile: '/profile',
     history: '/history',
     transcript: '/transcript',
+    subjectDetail: '/subjects/:subjectId',
 }
 
 const admin = {

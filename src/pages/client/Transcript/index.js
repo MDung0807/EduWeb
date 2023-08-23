@@ -1,5 +1,6 @@
 import ItemTranscript from "../../../components/ItemTranscript";
 import React from "react"; // Make sure to import React
+ import ChartTranscript from "../../../components/ChartTranscript";
 const hisTests = [
     {hisId: 1, firstName: 'Do', lastName: 'Dung', testId: 1, testName: 'test 1', score: 8, timeInTest: 60 , time: "12/12/2020"},
     {hisId: 2, firstName: 'Do', lastName: 'Dung', testId: 2, testName: 'test 2', score: 8, timeInTest: 60 , time: "12/12/2020"},
@@ -30,6 +31,7 @@ export default function Transcript ({hisTest}){
                     <div className="transcript-title title text-center">
                         <h1>Transcript</h1>
                     </div>
+            <ChartTranscript ></ChartTranscript>
                     <div className="pt-5">
                     {hisTest.map((item) => (
                 <ItemTranscript key={item.hisId} item={item}/>))}

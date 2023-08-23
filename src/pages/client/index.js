@@ -10,3 +10,4 @@ export {default as Quizzes} from "./Quizzes";
 export {default as HisQuizzes} from "./HisQuizzes";
 export {default as Profile} from "./Profile";
 export {default as Transcript} from "./Transcript";
+export {default as SubjectDetail} from "./SubjectDetail";

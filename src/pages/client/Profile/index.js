@@ -1,4 +1,3 @@
-import { Avatar } from "@mui/material"
 import { Image } from "react-bootstrap"
 import Grid from '@mui/material/Unstable_Grid2';
 import ListGroup from 'react-bootstrap/ListGroup';
