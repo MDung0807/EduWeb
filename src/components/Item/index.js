@@ -43,7 +43,7 @@ import { Link } from 'react-router-dom';
         ))}
       </div>
       </div>
-      <Button variant="outline-primary m-auto">></Button>
+      <Button variant="outline-primary m-auto">right</Button>
       </div>
       </div>
     )

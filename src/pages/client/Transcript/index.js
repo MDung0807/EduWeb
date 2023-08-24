@@ -31,7 +31,6 @@ export default function Transcript ({hisTest}){
                     <div className="transcript-title title text-center">
                         <h1>Transcript</h1>
                     </div>
-            <ChartTranscript ></ChartTranscript>
                     <div className="pt-5">
                     {hisTest.map((item) => (
                 <ItemTranscript key={item.hisId} item={item}/>))}
