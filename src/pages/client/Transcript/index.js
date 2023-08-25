@@ -15,6 +15,8 @@ const hisTests = [
     {hisId: 11, firstName: 'Do', lastName: 'Dung', testId: 11, testName: 'test 11', score: 11, timeInTest: 60 , time: "12/12/2020"},
 
 ]
+const titles = ['Mã Bài Test', 'Họ Học Sinh', 'Tên Học Sinh', 'Tên Bài Test', 'Điểm', 'Thời Gian Thực Hiện', 'Thời Gian Thi']
+const properties = ['hisId', 'firstName', 'lastName', 'testName', 'score', 'timeInTest', 'time']
 
 function checkValue(hisItem){
     if (typeof(hisItem) === 'undefined'){
@@ -23,19 +25,19 @@ function checkValue(hisItem){
     return hisItem;
 }
 
-export default function Transcript ({hisTest}){
-    hisTest = checkValue(hisTest)
+export default function Transcript ({hisTests}){
+    hisTests = checkValue(hisTests)
     return (
         <div className="history-test">
+            <ChartTranscript/>
             <div className="Transcript ">
-                    <div className="transcript-title title text-center">
-                        <h1>Transcript</h1>
-                    </div>
-                    <div className="pt-5">
-                    {hisTest.map((item) => (
-                <ItemTranscript key={item.hisId} item={item}/>))}
-                    </div>
+                <div className="transcript-title title text-center">
+                    <h1>Transcript</h1>
                 </div>
+                <div className="p-5 mx-5">
+                    <ItemTranscript  items={hisTests} titles={titles} properties={properties}/>
+                </div>
+            </div>
         </div>
     )
 }

@@ -1,75 +1,122 @@
-import React, { PureComponent } from 'react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import * as React from 'react';
+import { BarChart } from '@mui/x-charts/BarChart';
+import { axisClasses } from '@mui/x-charts';
 
-const data = [
+const chartSetting = {
+  yAxis: [
+    {
+      label: 'rainfall (mm)',
+    },
+  ],
+  width: 500,
+  height: 300,
+  sx: {
+    [`.${axisClasses.left} .${axisClasses.label}`]: {
+      transform: 'rotate(-90deg) translate(0px, -20px)',
+    },
+  },
+};
+const dataset = [
   {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
+    london: 59,
+    paris: 57,
+    newYork: 86,
+    seoul: 21,
+    month: 'Jan',
   },
   {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    london: 50,
+    paris: 52,
+    newYork: 78,
+    seoul: 28,
+    month: 'Fev',
   },
   {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
+    london: 47,
+    paris: 53,
+    newYork: 106,
+    seoul: 41,
+    month: 'Mar',
   },
   {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
+    london: 54,
+    paris: 56,
+    newYork: 92,
+    seoul: 73,
+    month: 'Apr',
   },
   {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
+    london: 57,
+    paris: 69,
+    newYork: 92,
+    seoul: 99,
+    month: 'May',
   },
   {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
+    london: 60,
+    paris: 63,
+    newYork: 103,
+    seoul: 144,
+    month: 'June',
   },
   {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
+    london: 59,
+    paris: 60,
+    newYork: 105,
+    seoul: 319,
+    month: 'July',
+  },
+  {
+    london: 65,
+    paris: 60,
+    newYork: 106,
+    seoul: 249,
+    month: 'Aug',
+  },
+  {
+    london: 51,
+    paris: 51,
+    newYork: 95,
+    seoul: 131,
+    month: 'Sept',
+  },
+  {
+    london: 60,
+    paris: 65,
+    newYork: 97,
+    seoul: 55,
+    month: 'Oct',
+  },
+  {
+    london: 67,
+    paris: 64,
+    newYork: 76,
+    seoul: 48,
+    month: 'Nov',
+  },
+  {
+    london: 61,
+    paris: 70,
+    newYork: 103,
+    seoul: 25,
+    month: 'Dec',
   },
 ];
 
-export default class ChartTranscript extends PureComponent {
+const valueFormatter = (value) => `${value}mm`;
 
-  render() {
-    return (
-      <ResponsiveContainer width="100%" height="100%">
-        <AreaChart
-          width={500}
-          height={200}
-          data={data}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 0,
-            bottom: 0,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
-           <Area type="monotone" dataKey="pv" stroke="#8884d8" fill="#8884d8" />
-        </AreaChart>
-      </ResponsiveContainer>
-    );
-  }
+export default function ChartTranscript() {
+  return (
+    <BarChart
+      dataset={dataset}
+      xAxis={[{ scaleType: 'band', dataKey: 'month' }]}
+      series={[
+        { dataKey: 'london', label: 'London', valueFormatter },
+        { dataKey: 'paris', label: 'Paris', valueFormatter },
+        { dataKey: 'newYork', label: 'New York', valueFormatter },
+        { dataKey: 'seoul', label: 'Seoul', valueFormatter },
+      ]}
+      {...chartSetting}
+    />
+  );
 }
