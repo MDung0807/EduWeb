@@ -4,15 +4,15 @@
 import { Link } from 'react-router-dom';
 
 
-  export default function Item({items, title, linkAction}) {
+  export default function Item({items, title, linkAction, style}) {
    
     return (
       <div>
         <h1 className='fs-2 text pt-5 pl-6'>{title}</h1>
-        <div className='d-flex '>
+        <div className='d-flex'>
       <Button variant="outline-primary m-auto">left</Button>
         <div className='listItem'>
-        <div className="container">
+        <div className="container" style={style}>
         {items.map((item, index) => (
           <div className="bg-white">
           <div className="mx-auto px-5 ">

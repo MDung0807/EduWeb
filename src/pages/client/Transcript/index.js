@@ -1,4 +1,4 @@
-import ItemTranscript from "../../../components/ItemTranscript";
+import TableData from "../../../components/TableData";
 import React from "react"; // Make sure to import React
  import ChartTranscript from "../../../components/ChartTranscript";
 const hisTests = [
@@ -35,7 +35,7 @@ export default function Transcript ({hisTests}){
                     <h1>Transcript</h1>
                 </div>
                 <div className="p-5 mx-5">
-                    <ItemTranscript  items={hisTests} titles={titles} properties={properties}/>
+                    <TableData  items={hisTests} titles={titles} properties={properties}/>
                 </div>
             </div>
         </div>

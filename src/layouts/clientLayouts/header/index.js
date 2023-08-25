@@ -7,10 +7,10 @@ import configs from '../../../configs'
 import avatar from "../../../assets/client/avatar.png"
 
 const navigation = [
-  { name: 'Home', href: '#', current: true , address: configs.routes.home},
-  { name: 'Subject', href: '#', current: false, address: configs.routes.home},
-  { name: 'AboutMe', href: '#', current: false, address: configs.routes.home },
-  { name: 'Calendar', href: '#', current: false, address: configs.routes.home },
+  { name: 'Home', current: true , address: configs.routes.home},
+  { name: 'Subject', current: false, address: configs.routes.subjects},
+  { name: 'AboutMe', current: false, address: configs.routes.home },
+  { name: 'Calendar', current: false, address: configs.routes.home },
 ]
 
 function classNames(...classes) {

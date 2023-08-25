@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './main.css'
 
 
-export default function ItemTranscript({items, limit, titles, properties}) {
+export default function TableData({items, limit, titles, properties}) {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
