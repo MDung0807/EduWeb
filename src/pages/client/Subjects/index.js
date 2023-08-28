@@ -19,7 +19,7 @@ export default function Subjects(){
     const title = 'Subject'
     return (
         <div className="subject">
-           <GridData items={subjects} properties={properties} style={style} title={title}/>
+           <GridData items={subjects} properties={properties} style={style} title={title} linkAction={'/subjects/'}/>
         </div>
     )
 }

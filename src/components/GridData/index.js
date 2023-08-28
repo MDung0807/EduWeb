@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-    const linkAction = '/subjects/'
-   export default function GridData({items, properties, style, title}){
+   export default function GridData({items, properties, style, title, linkAction}){
     return (
       <div className="">
         <div className="text-center p-5 ">
