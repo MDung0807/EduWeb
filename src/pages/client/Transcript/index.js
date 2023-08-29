@@ -1,6 +1,8 @@
 import TableData from "../../../components/TableData";
 import React from "react"; // Make sure to import React
- import ChartTranscript from "../../../components/ChartTranscript";
+import ChartTranscript from "../../../components/ChartTranscript";
+import configs from "../../../configs";
+
 const hisTests = [
     {hisId: 1, firstName: 'Do', lastName: 'Dung', testId: 1, testName: 'test 1', score: 8, timeInTest: 60 , time: "12/12/2020"},
     {hisId: 2, firstName: 'Do', lastName: 'Dung', testId: 2, testName: 'test 2', score: 8, timeInTest: 60 , time: "12/12/2020"},
@@ -35,7 +37,7 @@ export default function Transcript ({hisTests}){
                     <h1>Transcript</h1>
                 </div>
                 <div className="p-5 mx-5">
-                    <TableData  items={hisTests} titles={titles} properties={properties}/>
+                    <TableData  items={hisTests} titles={titles} properties={properties} linkAction={'/subjects/'}/>
                 </div>
             </div>
         </div>

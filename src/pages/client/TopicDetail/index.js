@@ -5,7 +5,6 @@ import TableData from '../../../components/TableData';
 
 export default function TopicDetail(){
     const {topicId} = useParams();
-    console.log(topicId)
     const topic = {id: topicId, name: "topic1", image: "", status: 1}
     const tests = [
         {testId: 1, dateCreate: '2021-09-01', quantity: 60, status: 1, testName: 'test1', time: 60},

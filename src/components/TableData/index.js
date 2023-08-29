@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { Table, TableContainer, TableHead, TableCell, TableRow, TableBody } from '@mui/material';
 import Paper from '@mui/material/Paper';
-import { Link } from 'react-router-dom';
 import './main.css'
-import { click } from '@testing-library/user-event/dist/click';
+import { Link } from 'react-router-dom';
 
 
 export default function TableData({items, limit, titles, properties, linkAction}) {
+
+  function handlClickRow(id){
+  }
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -20,9 +22,11 @@ export default function TableData({items, limit, titles, properties, linkAction}
 
         <TableBody>
         {items.map((item) => (
-            <TableRow click=''>
+            <TableRow onClick={() => handlClickRow(item[properties[0]])}>
              {properties.map((property)=>(
-                <TableCell align="center">{item[property]}</TableCell>
+                <TableCell align="center">
+                  <Link to={linkAction + item[properties[0]]}>{item[property]}</Link>
+                </TableCell>
               ))}
             </TableRow>
           ))}
