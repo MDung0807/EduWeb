@@ -11,3 +11,4 @@ export {default as HisQuizzes} from "./HisQuizzes";
 export {default as Profile} from "./Profile";
 export {default as Transcript} from "./Transcript";
 export {default as SubjectDetail} from "./SubjectDetail";
+export {default as TopicDetail} from "./TopicDetail";

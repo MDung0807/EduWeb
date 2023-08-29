@@ -11,6 +11,7 @@ const client = {
     history: '/history',
     transcript: '/transcript',
     subjectDetail: '/subjects/:subjectId',
+    topicDetail: '/topics/:topicId',
 }
 
 const admin = {

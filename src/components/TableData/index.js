@@ -3,9 +3,10 @@ import { Table, TableContainer, TableHead, TableCell, TableRow, TableBody } from
 import Paper from '@mui/material/Paper';
 import { Link } from 'react-router-dom';
 import './main.css'
+import { click } from '@testing-library/user-event/dist/click';
 
 
-export default function TableData({items, limit, titles, properties}) {
+export default function TableData({items, limit, titles, properties, linkAction}) {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -19,7 +20,7 @@ export default function TableData({items, limit, titles, properties}) {
 
         <TableBody>
         {items.map((item) => (
-            <TableRow>
+            <TableRow click=''>
              {properties.map((property)=>(
                 <TableCell align="center">{item[property]}</TableCell>
               ))}

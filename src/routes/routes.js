@@ -10,6 +10,7 @@ import {
     Transcript,
     Topics,
     SubjectDetail,
+    TopicDetail,
 } from '../pages/client'
 import configs from '../configs'
 import {ClientLayouts, AdminLayouts} from '../layouts';
@@ -28,6 +29,7 @@ const publicRoutes = [
     { path: configs.routes.profile, component: Profile, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.transcript, component: Transcript, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.subjectDetail, component: SubjectDetail, layout: ClientLayouts, private: false, roles: []},
+    { path: configs.routes.topicDetail, component: TopicDetail, layout: ClientLayouts, private: false, roles: []},
 
 ];
 
