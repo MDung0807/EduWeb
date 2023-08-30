@@ -18,7 +18,7 @@ export default function TopicDetail(){
     return (
         <div>
             <h1>topicDetail</h1>
-            <TableData items={tests} titles={titiles} properties={['testId', 'dateCreate', 'quantity', 'testName']}></TableData>
+            <TableData items={tests} titles={titiles} properties={['testId', 'dateCreate', 'quantity', 'testName']} linkAction={'/subjects/'}></TableData>
         </div>
     )
 }

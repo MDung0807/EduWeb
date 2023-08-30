@@ -12,6 +12,7 @@ const client = {
     transcript: '/transcript',
     subjectDetail: '/subjects/:subjectId',
     topicDetail: '/topics/:topicId',
+    aboutMe: '/aboutme',
 }
 
 const admin = {
