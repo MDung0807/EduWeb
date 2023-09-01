@@ -14,10 +14,10 @@ import { Link } from 'react-router-dom';
         <div className='listItem'>
         <div className="container" style={style}>
         {items.map((item, index) => (
-          <div className="bg-white">
+          <div className="bg-white" key={index} >
           <div className="mx-auto px-5 ">
             <div className="item">
-            <div key={index} className="group relative">
+            <div className="group relative">
                   <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                     <img
                       src={item.imageSrc}

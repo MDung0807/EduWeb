@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
           <h1 className='fs-2 text pt-5 pl-6'>{title}</h1>
         </div>
         <div className="container d-flex pt-2 justify-content-center" style={style}>
-        {items.map((item) => (
-          <div className="bg-white m-5 ">
+        {items.map((item, index) => (
+          <div className="bg-white m-5 " key={index}>
             <div className="mx-auto p-5 ">
               <div className="item">
               <div className="group relative">

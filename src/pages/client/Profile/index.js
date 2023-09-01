@@ -5,6 +5,7 @@ import Transcript from "../Transcript";
 import configs from "../../../configs";
 import { Link } from "react-router-dom";
 import './main.css'
+import * as  ProfileService from '../../../services/ProfileService'
 const user = {
     userId: 1,
     avatar: "https://res.cloudinary.com/dx7nsygei/image/upload/v1686538256/image_user_student5.jpg",
@@ -15,6 +16,13 @@ const user = {
     phoneNumber: "0987898789",
     gender: "Female",
     status: 1,
+}
+
+async function getUser() {
+    const user = await ProfileService.getProfile()
+    console.log(localStorage.getItem('token'))
+    console.log(user)
+    return user;
 }
 localStorage.clear()
 
@@ -27,10 +35,10 @@ const hisTest = [
     {hisId: 6, firstName: 'Do', lastName: 'Dung', testId: 6, testName: 'test 6', score: 8, timeInTest: 60 , time: "12/12/2020"},
     {hisId: 7, firstName: 'Do', lastName: 'Dung', testId: 7, testName: 'test 7', score: 8, timeInTest: 60 , time: "12/12/2020"},
     {hisId: 8, firstName: 'Do', lastName: 'Dung', testId: 8, testName: 'test 8', score: 8, timeInTest: 60 , time: "12/12/2020"},
-
 ]
 const action = 'how'
 export default function Profile (){
+    const user= getUser()
     return (
         <div className="profile">
             <div className="body">

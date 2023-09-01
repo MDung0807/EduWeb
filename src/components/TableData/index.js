@@ -21,10 +21,10 @@ export default function TableData({items, limit, titles, properties, linkAction}
         </TableHead>
 
         <TableBody>
-        {items.map((item) => (
-            <TableRow onClick={() => handlClickRow(item[properties[0]])}>
-             {properties.map((property)=>(
-                <TableCell align="center">
+        {items.map((item, iItem) => (
+            <TableRow onClick={() => handlClickRow(item[properties[0]])} key={iItem}>
+             {properties.map((property, iProperty)=>(
+                <TableCell align="center" key={iProperty}>
                   <Link to={linkAction + item[properties[0]]}>{item[property]}</Link>
                 </TableCell>
               ))}

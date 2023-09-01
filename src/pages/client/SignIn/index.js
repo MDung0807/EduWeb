@@ -13,19 +13,37 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import configs from '../../../configs';
+import { useState } from 'react';
 
+import * as AuthService from '../../../services/AuthService';
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
+
+  const [error, setError] = useState(null);
+
+  const getData = (event) => {
+    return {
+      username: event.target.username.value,
+      password: event.target.password.value
+    }
+  }
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const data = getData(event)
+    const response = await AuthService.signIn(data)
+    if (response.error === false){
+      localStorage.setItem('token', response.data.token)
+      localStorage.setItem('username', response.data.username)
+      localStorage.setItem('userID', response.data.id)
+      window.location.href = configs.routes.home
+    }
+    else{
+      setError(response.data.message)
+    }
   };
 
   return (
@@ -51,10 +69,10 @@ export default function SignIn() {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              id="username"
+              label="Username"
+              name="username"
+              autoComplete="username"
               autoFocus
             />
             <TextField
@@ -71,6 +89,7 @@ export default function SignIn() {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
+            {<div className="text-danger text-center">{error}</div>}
             <Button
               type="submit"
               fullWidth

@@ -9,7 +9,7 @@ import avatar from "../../../assets/client/avatar.png"
 const navigation = [
   { name: 'Home', current: true , address: configs.routes.home},
   { name: 'Subject', current: false, address: configs.routes.subjects},
-  { name: 'AboutMe', current: false, address: configs.routes.home },
+  { name: 'AboutMe', current: false, address: configs.routes.aboutMe },
   { name: 'Calendar', current: false, address: configs.routes.home },
 ]
 

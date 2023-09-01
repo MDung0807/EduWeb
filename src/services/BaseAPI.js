@@ -27,3 +27,13 @@ export const createFormData = async (url, data)=>{
         return null;
     }
 }
+
+export const postItem = async (url, data)=>{
+    try{
+        const response = await instance().post(url, data)
+        return response
+    }
+    catch(error){
+        return error;
+    }
+}
