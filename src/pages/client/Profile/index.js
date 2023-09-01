@@ -4,7 +4,10 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Transcript from "../Transcript";
 import configs from "../../../configs";
 import { Link } from "react-router-dom";
+import avatar from "../../../assets/client/avatar.png"
+
 import './main.css'
+import React, { useEffect, useState } from "react";
 import * as  ProfileService from '../../../services/ProfileService'
 const user = {
     userId: 1,
@@ -18,14 +21,6 @@ const user = {
     status: 1,
 }
 
-async function getUser() {
-    const user = await ProfileService.getProfile()
-    console.log(localStorage.getItem('token'))
-    console.log(user)
-    return user;
-}
-localStorage.clear()
-
 const hisTest = [
     {hisId: 1, firstName: 'Do', lastName: 'Dung', testId: 1, testName: 'test 1', score: 8, timeInTest: 60 , time: "12/12/2020"},
     {hisId: 2, firstName: 'Do', lastName: 'Dung', testId: 2, testName: 'test 2', score: 8, timeInTest: 60 , time: "12/12/2020"},
@@ -36,9 +31,23 @@ const hisTest = [
     {hisId: 7, firstName: 'Do', lastName: 'Dung', testId: 7, testName: 'test 7', score: 8, timeInTest: 60 , time: "12/12/2020"},
     {hisId: 8, firstName: 'Do', lastName: 'Dung', testId: 8, testName: 'test 8', score: 8, timeInTest: 60 , time: "12/12/2020"},
 ]
-const action = 'how'
-export default function Profile (){
-    const user= getUser()
+
+const getUser = async () => {
+    return await ProfileService.getProfile()
+}
+
+export default function Profile(){
+    const [user, setUser] = useState({})
+    
+    useEffect(()=>{
+        const fetchData = async () => {
+            const response = await getUser()
+            setUser(response.data)
+        }
+        fetchData(); // Gọi hàm fetchData khi component được mount
+    }, []);
+    localStorage.setItem('avatar', user.avatar)
+    console.log(user)
     return (
         <div className="profile">
             <div className="body">
@@ -49,7 +58,7 @@ export default function Profile (){
                 <Grid container spacing={2}>
                     <Grid xs={2.5}>
                         <div className="avatar">
-                            <img className="" src="https://res.cloudinary.com/dx7nsygei/image/upload/v1683611484/image_user_student10.jpg" alt="MD" />
+                            <img className="" src={localStorage.getItem("avatar") ? localStorage.getItem("avatar") : avatar} alt="avatar" />
                         </div>
                     </Grid>
                     <Grid xs={8}>
@@ -73,7 +82,7 @@ export default function Profile (){
                 </Grid>
                 </div>
                 <div className="Transcript">
-                    <Transcript hisTest={hisTest} action={action}/>
+                    <Transcript hisTest={hisTest}/>
                     <Link to={configs.routes.transcript}>See more</Link>
                 </div>
             </div>

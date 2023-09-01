@@ -16,7 +16,6 @@ import configs from '../../../configs';
 import { useState } from 'react';
 
 import * as AuthService from '../../../services/AuthService';
-// TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
 
@@ -85,10 +84,7 @@ export default function SignIn() {
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
+            
             {<div className="text-danger text-center">{error}</div>}
             <Button
               type="submit"

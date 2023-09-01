@@ -5,7 +5,7 @@ const instance = ()=> {
         baseURL: "http://localhost:8090/api/",
         setTimeout: 10000,
         headers: {
-            'Bearer': localStorage.getItem('token'),
+            "Authorization": "Bearer " + localStorage.getItem("token"),
         }
     });
     instance.interceptors.request.use();

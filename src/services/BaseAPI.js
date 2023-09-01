@@ -7,9 +7,8 @@ export const getItems = async (url, params)=>{
         })
         return response
     }
-    catch(e){
-        console.log("errors: ", e.message())
-        return null;
+    catch(error){
+        return error;
     }
 }
 
