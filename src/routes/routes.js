@@ -13,8 +13,11 @@ import {
     TopicDetail,
     Abouts,
 } from '../pages/client'
+
 import configs from '../configs'
 import {ClientLayouts, AdminLayouts} from '../layouts';
+
+import { HomeAdmin } from '../pages/admin';
 
 
 const publicRoutes = [
@@ -36,7 +39,7 @@ const publicRoutes = [
 ];
 
 const privateRoutes= [
-    {path: configs.routes.homeAdmin, component: Home, layout: AdminLayouts, private: true, roles: ['admin']},
+    {path: configs.routes.homeAdmin, component: HomeAdmin, layout: AdminLayouts, private: true, roles: ['admin']},
 ]
 
 const routes = [
