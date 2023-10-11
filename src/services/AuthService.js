@@ -1,20 +1,15 @@
 import * as BaseAPI from './BaseAPI';
 
-export const signIn =async (data) => {
-    // try{
-    //     const response = await postItem(AuthAPI.signin, data)
-    //     console.log(response.data)
-    //     return response.data     
-    // }
-    // catch{
-    //     return null
-    // }
+export const login =async (data) => {
+    return await BaseAPI.postItem(AuthAPI.login, data)
+}
 
-    return await BaseAPI.postItem(AuthAPI.signin, data)
+export const register =async (data) => {
+    return await BaseAPI.postItem(AuthAPI.register, data)
 }
 
 const AuthAPI = {
-    signin: 'auth/login',
-    signup: 'auth/register',
-    resetPassword: 'auth/reset'
+    login: 'auth/login/',
+    register: 'customer/register/',
+    resetPassword: 'auth/reset/'
 }

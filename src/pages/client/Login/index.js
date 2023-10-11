@@ -19,29 +19,30 @@ import * as AuthService from '../../../services/AuthService';
 
 const defaultTheme = createTheme();
 
-export default function SignIn() {
+export default function Login() {
 
   const [error, setError] = useState(null);
 
   const getData = (event) => {
     return {
       username: event.target.username.value,
-      password: event.target.password.value
+      password: event.target.password.value,
+      roleName: 'CUSTOMER'
     }
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = getData(event)
-    const response = await AuthService.signIn(data)
-    if (response.error === false){
+    const response = await AuthService.login(data)
+    if (response.isError === false){
       localStorage.setItem('token', response.data.token)
       localStorage.setItem('username', response.data.username)
       localStorage.setItem('userID', response.data.id)
       window.location.href = configs.routes.home
     }
     else{
-      setError(response.data.message)
+      setError(response.data)
     }
   };
 
@@ -61,7 +62,7 @@ export default function SignIn() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Login
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
@@ -92,7 +93,7 @@ export default function SignIn() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              Login
             </Button>
             <Grid container>
               <Grid item xs>

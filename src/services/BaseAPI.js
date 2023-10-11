@@ -36,3 +36,13 @@ export const postItem = async (url, data)=>{
         return error;
     }
 }
+
+export const deleteItem = async (url, data)=>{
+    try{
+        const response = await instance().delete(url, data)
+        return response
+    }
+    catch(error){
+        return error;
+    }
+}

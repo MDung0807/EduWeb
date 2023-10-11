@@ -4,14 +4,15 @@ import {
     PasswordReset,
     Profile,
     Quizzes,
-    SignIn,
-    SignUp,
+    Register,
     Subjects,
     Transcript,
     Topics,
     SubjectDetail,
     TopicDetail,
     Abouts,
+    UpdateProfile,
+    Login
 } from '../pages/client'
 
 import configs from '../configs'
@@ -22,8 +23,8 @@ import { HomeAdmin } from '../pages/admin';
 
 const publicRoutes = [
     { path: configs.routes.home, component: Home, layout: ClientLayouts, private: false, roles: []},
-    { path: configs.routes.signin, component: SignIn, layout: ClientLayouts, private: false, roles: []},
-    { path: configs.routes.signup, component: SignUp, layout: ClientLayouts, private: false, roles: []},
+    { path: configs.routes.login, component: Login, layout: ClientLayouts, private: false, roles: []},
+    { path: configs.routes.register, component: Register, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.passReset, component: PasswordReset, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.subjects, component: Subjects, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.topics, component: Topics, layout: ClientLayouts, private: false, roles: []},
@@ -35,7 +36,7 @@ const publicRoutes = [
     { path: configs.routes.subjectDetail, component: SubjectDetail, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.topicDetail, component: TopicDetail, layout: ClientLayouts, private: false, roles: []},
     { path: configs.routes.aboutMe, component: Abouts, layout: ClientLayouts, private: false, roles: []},
-
+    { path: configs.routes.updateProfile, component: UpdateProfile, layout: ClientLayouts, private: false, roles: []},
 ];
 
 const privateRoutes= [

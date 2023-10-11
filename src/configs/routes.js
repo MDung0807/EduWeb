@@ -1,7 +1,7 @@
 const client = {
     home: '/',
-    signin: '/signin',
-    signup: '/signup',
+    login: '/login',
+    register: '/register',
     passReset: '/passreset',
     subjects: '/subjects',
     topics: '/topics',
@@ -13,6 +13,7 @@ const client = {
     subjectDetail: '/subjects/:subjectId',
     topicDetail: '/topics/:topicId',
     aboutMe: '/aboutme',
+    updateProfile: '/updateProfile',
 }
 
 const admin = {

@@ -2,6 +2,11 @@
     display: block;
     justify-content: center;
     padding: 0 200px;
+    background: linear-gradient(180deg, #ffffff, #dad0d0);
+
+}
+.listGroup{
+  background: linear-gradient(180deg, #ffffff, #c2b2b2);
 }
 .image-infor{
     position: relative;

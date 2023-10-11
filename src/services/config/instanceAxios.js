@@ -1,11 +1,12 @@
 import axios from "axios";
 
 const instance = ()=> {
+    const token = localStorage.getItem("token") ? localStorage.getItem("token") : null
     const instance = axios.create({
-        baseURL: "http://localhost:8090/api/",
+        baseURL: "http://localhost:5107/api/",
         setTimeout: 10000,
         headers: {
-            "Authorization": "Bearer " + localStorage.getItem("token"),
+            "Authorization": "Bearer " + token,
         }
     });
     instance.interceptors.request.use();

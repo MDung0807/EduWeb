@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useState} from 'react'
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,22 +14,48 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 import configs from '../../../configs';
+import  * as register from './register';
+import * as AuthService from '../../../services/AuthService';
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
 
-export default function SignUp() {
-  const handleSubmit = (event) => {
+
+const getData = (event) => {
+  return {
+    fullName: event.target.fullName.value,
+    email: event.target.email.value,
+    phoneNumber: event.target.phoneNumber.value,
+    dateOfBirth: event.target.dateOfBirth.value,
+    address: event.target.address.value,
+    gender: event.target.gender.value,
+    username: event.target.username.value,
+    password: event.target.password.value,
+    roleName: 'CUSTOMER'
+  }
+}
+
+export default function Register() {
+  const [message, setMessage] = useState(null); 
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const data = getData(event)
+    const response = await AuthService.register(data)
+
+    if (response.isError === false){
+      window.location.href = configs.routes.login
+    }
+    else{
+      setMessage(response.data)
+      console.log(response.data)
+    }
   };
 
   return (
+    
     <ThemeProvider theme={defaultTheme}>
+
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -39,35 +66,27 @@ export default function SignUp() {
             alignItems: 'center',
           }}
         >
+        <p className='text-danger text-center' id='messageError'>{message}</p>
+
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box component="form" Validate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
+            <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
+                  id="fullName"
+                  label="Full Name"
+                  name="fullName"
+                  autoComplete="Name"
                 />
               </Grid>
+
               <Grid item xs={12}>
                 <TextField
                   required
@@ -78,6 +97,65 @@ export default function SignUp() {
                   autoComplete="email"
                 />
               </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="phoneNumber"
+                  label="Phone Number"
+                  name="phoneNumber"
+                  autoComplete="phone"
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="dateOfBirth"
+                  label="Date Of Birth"
+                  name="dateOfBirth"
+                  autoComplete="dateOfBirth"
+                  type='date'
+                />
+              </Grid>
+
+
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  required
+                  fullWidth
+                  id="address"
+                  label="Address"
+                  name="address"
+                  autoComplete="address"
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  required
+                  fullWidth
+                  id="gender"
+                  label="Gender"
+                  name="gender"
+                  autoComplete="gender"
+                  type=''
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="username"
+                  label="Username"
+                  name="username"
+                  autoComplete="username"
+                />
+              </Grid>
+
               <Grid item xs={12}>
                 <TextField
                   required
@@ -89,7 +167,7 @@ export default function SignUp() {
                   autoComplete="new-password"
                 />
               </Grid>
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
@@ -99,7 +177,7 @@ export default function SignUp() {
                   id="passwordConfirm"
                   autoComplete="new-password"
                 />
-              </Grid>
+              </Grid> */}
               <Grid item xs={12}>
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
